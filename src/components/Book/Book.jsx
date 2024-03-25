@@ -1,10 +1,19 @@
 import PropTypes from 'prop-types';
 import { FaRegStar } from "react-icons/fa";
+import { Link, useNavigate  } from 'react-router-dom';
 
 const Book = ({book}) => {
-    const {author, bookName,category, rating ,image } = book;
+    const {bookId,author, bookName,category, rating ,image } =  book;
+
+    const navigate = useNavigate();
+
+    const handleDetails = () =>{
+        navigate(`/book/${bookId}`)
+    }
+
+
     return (
-        <div className="border rounded-md  p-5 ">
+        <div onClick={handleDetails} className="border rounded-md  p-5 ">
              <div className='flex items-center md:p-9 p-5 justify-center bg-gray-100 rounded-md'>
                 <img className='h-1/2 w-1/2' src={image} alt="" />
              </div>
@@ -19,13 +28,13 @@ const Book = ({book}) => {
              <div className='flex justify-between'>
                 <p>{category}</p>
                 <p className='flex gap-2 justify-center items-center'>{rating}<FaRegStar></FaRegStar></p>
-             </div>
+             </div> 
         </div>
     );
 };
 
-Book.propType={
-    book:PropTypes.object.isRequired,
-}
+ Book.propTypes ={
+    book: PropTypes.object
+ }
 
 export default Book;

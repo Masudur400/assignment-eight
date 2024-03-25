@@ -10,6 +10,7 @@ import Home from './components/Home/Home.jsx';
 import ListBooks from './components/ListBooks/ListBooks.jsx';
 import PagesToRead from './components/PagesToRead/PagesToRead.jsx';
 import Books from './components/Books/Books.jsx';
+import BookDetails from './components/BookDetails/BookDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
         path:"/pagesToRead",
         element:<PagesToRead></PagesToRead>
       },
-       
+       {
+        path:"/book/:id",
+        element:<BookDetails></BookDetails>,
+        loader:()=>fetch('fakeData.json'),
+       }
 
     ]
   },
