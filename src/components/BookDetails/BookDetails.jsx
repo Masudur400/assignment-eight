@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 
 
@@ -8,7 +10,16 @@ const BookDetails = () => {
     const idInt = parseInt(id)
     const book = books.find(book => book.bookId === idInt)
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = book;
-    console.log(book);
+    // console.log(book);
+    const handleRead = () =>{
+        toast('Add Successfull Read')
+    }
+
+    const handleWishList = () =>{
+        toast('Add Successfull WishList')
+    }
+
+
     return (
         <div className="md:flex gap-10 my-14">
             <div className="bg-gray-100 flex justify-center  md:w-1/2 rounded-xl p-10">
@@ -42,10 +53,14 @@ const BookDetails = () => {
                 </div>
 
                 <div className="flex gap-10 mt-5">
-                <button className="btn bg-green-400 text-white font-bold">Read</button>
-                <button className="btn bg-green-400 text-white font-bold">Wishlist</button>
+
+                <button onClick={handleRead}
+                 className="btn bg-green-400 text-white font-bold">Read</button>
+                <button onClick={handleWishList}
+                 className="btn bg-green-400 text-white font-bold">Wishlist</button>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
