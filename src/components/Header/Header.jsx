@@ -13,7 +13,7 @@ const Header = () => {
             <Link to="/listBooks"><button className="btn text-white bg-green-500 lg:mt-20 mt-5 mx-2">View The List</button> </Link>
             </div>
 
-            <div className="lg:w-1/2 hidden md:flex flex justify-end">
+            <div className="lg:w-1/2 hidden md:flex  justify-end">
                 <img src="/src/assets/images/pngwing 1.png" alt="" />
             </div>
         </div>

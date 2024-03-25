@@ -14,10 +14,7 @@ const ListBooks = () => {
     const [bookSave,setBookSave] = useState([])
     useEffect(() => {
         const storedBookIds = getReadBook();
-        if(books.length > 0){
-            // const savedBook = books.filter(book => storedBookIds.includes(book.bookId));
-            // console.log(books,storedBookIds,savedBook);
-            // console.log(books)
+        if(books.length > 0){ 
             const savedBook = []
             for(const id of storedBookIds){
                 const book = books.find(book => book.bookId === id);
@@ -25,8 +22,7 @@ const ListBooks = () => {
                     savedBook.push(book);
                 }
             }
-            setBookSave(savedBook);
-            // console.log(books,storedBookIds,savedBook);
+            setBookSave(savedBook); 
         }
     }, [])
 

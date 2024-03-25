@@ -8,11 +8,9 @@ import {
 import Root from './components/Root/Root.jsx';
 import Home from './components/Home/Home.jsx';
 import ListBooks from './components/ListBooks/ListBooks.jsx';
-import PagesToRead from './components/PagesToRead/PagesToRead.jsx';
-import Books from './components/Books/Books.jsx';
+import PagesToRead from './components/PagesToRead/PagesToRead.jsx'; 
 import BookDetails from './components/BookDetails/BookDetails.jsx';
-import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
-import ReadBooks from './components/ReadBooks/ReadBooks.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx'; 
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,12 +34,8 @@ const router = createBrowserRouter([
         path:"/book/:id",
         element:<BookDetails></BookDetails>,
         loader:()=>fetch('fakeData.json'),
-       },
-       {
-         
-        element:<ReadBooks></ReadBooks>,
-        loader:async ()=>await fetch('fakeData.json'),
        }
+       
 
     ]
   },
