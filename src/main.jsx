@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         loader:()=>fetch('fakeData.json'),
        },
        {
-        path:"/readBook",
+         
         element:<ReadBooks></ReadBooks>,
         loader:async ()=>await fetch('fakeData.json'),
        }

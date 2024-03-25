@@ -1,43 +1,19 @@
-import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import { getReadBook } from "../../Utility/LocalStorage";
+ 
 
 
 
 
-const ReadBooks = () => {
-    const books = useLoaderData();
-    const [bookSave,setBookSave] = useState([])
-    // console.log(books)
-
-    useEffect(() => {
-        const storedBookIds = getReadBook();
-        if(books.length > 0){
-            // const savedBook = books.filter(book => storedBookIds.includes(book.bookId));
-            // console.log(books,storedBookIds,savedBook);
-            // console.log(books)
-            const savedBook = []
-            for(const id of storedBookIds){
-                const book = books.find(book => book.bookId === id);
-                if(book){
-                    savedBook.push(book);
-                }
-            }
-            setBookSave(savedBook);
-            // console.log(books,storedBookIds,savedBook);
-        }
-    }, [])
-
+const ReadBooks = ({book}) => { 
+    const {bookName,author,image,review,totalPages,rating,category,tags,publisher,year_of_publishing}=book;
     return (
-        <div>
-            <h3 className="text-3xl">read books :{bookSave.length}</h3>
-             <div>
-                {
-                    bookSave.map((book,idx) => <div key={idx} book={book}>
-                        <h2>{book.bookName}</h2>
-                    </div>)
-                }
-             </div>
+        <div className="mb-5 md:flex border p-6 rounded-xl">
+              <div className='bg-gray-100 p-6 rounded-lg'>
+                <img className='md:w-60' src={image} alt="" />
+              </div>
+
+              <div>
+                    
+              </div>
         </div>
     );
 };

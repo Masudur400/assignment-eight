@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';   
 import { getReadBook } from '../../Utility/LocalStorage';
+import ReadBooks from '../ReadBooks/ReadBooks';
 
 
 const ListBooks = () => {
@@ -43,12 +44,9 @@ const ListBooks = () => {
                     <Tab>Wishlist Books</Tab>
                 </TabList>
                 <TabPanel>
-                    <div>
-                    <p>read books : {bookSave.length} </p> 
+                    <div> 
                     {
-                        bookSave.map(book => <div key={book.bookId}>
-                            <p>{book.bookName}</p>
-                        </div>)
+                        bookSave.map((book,idx) =>  <ReadBooks key={idx} book={book}></ReadBooks>)
                     }
                     </div>
                 </TabPanel>
