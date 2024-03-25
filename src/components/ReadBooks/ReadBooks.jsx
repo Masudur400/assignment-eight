@@ -1,6 +1,6 @@
  
 
-
+import PropTypes from 'prop-types'
 
 
 const ReadBooks = ({book}) => { 
@@ -12,10 +12,14 @@ const ReadBooks = ({book}) => {
               </div>
 
               <div>
-                    
+
               </div>
         </div>
     );
 };
+
+ReadBooks.propTypes={
+    book: PropTypes.object
+}
 
 export default ReadBooks;
