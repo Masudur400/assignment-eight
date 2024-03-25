@@ -42,8 +42,7 @@ const BookDetails = () => {
                     <p className="font-bold">Tags : </p>
                     {
                         tags.map((tag,i) => <p className="bg-green-50 mb-2 px-3 py-2 rounded-full text-green-500 font-bold" 
-                        key={i} 
-                        tag={tag}
+                        key={i}  
                         >{tag}</p>)
                     }
                 </div>
