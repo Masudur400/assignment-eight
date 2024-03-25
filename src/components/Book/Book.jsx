@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { FaRegStar } from "react-icons/fa";
 
 const Book = ({book}) => {
-    const {author,bookId,bookName,category,publisher,rating,review,tags,totalPages,year_of_publishing,image } = book;
+    const {author, bookName,category, rating ,image } = book;
     return (
         <div className="border rounded-md  p-5 ">
              <div className='flex items-center md:p-9 p-5 justify-center bg-gray-100 rounded-md'>
@@ -18,7 +18,7 @@ const Book = ({book}) => {
              <div className="divider"></div>
              <div className='flex justify-between'>
                 <p>{category}</p>
-                <p className='flex gap-2 justify-center items-center'>rating<FaRegStar></FaRegStar></p>
+                <p className='flex gap-2 justify-center items-center'>{rating}<FaRegStar></FaRegStar></p>
              </div>
         </div>
     );
