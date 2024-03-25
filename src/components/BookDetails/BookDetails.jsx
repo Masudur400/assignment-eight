@@ -7,7 +7,7 @@ const BookDetails = () => {
     const { id } = useParams()
     const idInt = parseInt(id)
     const book = books.find(book => book.bookId === idInt)
-    const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = book;
+    const { bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = book;
     console.log(book);
     return (
         <div className="md:flex gap-10 mt-14">
@@ -17,17 +17,17 @@ const BookDetails = () => {
 
             <div className="md:w-1/2">
                 <div className="space-y-3">
-                <h3 className="text-4xl font-bold">{bookName}</h3>
+                <h3 className="text-2xl mt-4 md:text-4xl font-bold">{bookName}</h3>
                 <p className="text-2xl">by: {author}</p>
                 </div>
                 <div className="divider"></div>
                 <p className="text-2xl">{category}</p>
                 <div className="divider"></div>
                 <p className="mt-3"><span className="font-bold">Review: </span>{review}</p>
-                <div className="flex justify-between mt-5">
+                <div className="md:flex justify-between mt-5">
                     <p className="font-bold">Tags : </p>
                     {
-                        tags.map((tag,i) => <p className="bg-green-50 px-3 py-2 rounded-full text-green-500 font-bold" 
+                        tags.map((tag,i) => <p className="bg-green-50 mb-2 px-3 py-2 rounded-full text-green-500 font-bold" 
                         key={i} 
                         tag={tag}
                         >{tag}</p>)
