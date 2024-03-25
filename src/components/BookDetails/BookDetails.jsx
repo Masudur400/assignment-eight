@@ -10,7 +10,7 @@ const BookDetails = () => {
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = book;
     console.log(book);
     return (
-        <div className="md:flex gap-10 mt-14">
+        <div className="md:flex gap-10 my-14">
             <div className="bg-gray-100 flex justify-center  md:w-1/2 rounded-xl p-10">
                 <img src={image} alt="" />
             </div>
