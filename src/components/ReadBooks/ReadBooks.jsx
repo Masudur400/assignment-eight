@@ -17,11 +17,11 @@ const ReadBooks = ({ book }) => {
             <div>
                 <p className='text-3xl font-bold mt-5'>{bookName}</p>
                 <p className='text-xl mt-5'>By : {author}</p>
-                <div className='flex gap-4 mt-5'>
-                    <div className='flex gap-3'>
+                <div className='md:flex gap-4 mt-5'>
+                    <div className='md:flex gap-3'>
                         <p className='font-bold'>Tags : </p>
                         {
-                            tags.map((tag, idx) => <p className='  px-2 py-1 rounded-full text-green-500 bg-green-50' key={idx}>{tag}</p>)
+                            tags.map((tag, idx) => <p className=' mb-2  px-2 py-1 rounded-full text-green-500 bg-green-50' key={idx}>{tag}</p>)
                         }
                     </div>
                     <div>
@@ -29,9 +29,9 @@ const ReadBooks = ({ book }) => {
                     </div>
 
                 </div>
-                <div className='flex gap-7 mt-5'>
-                    <p className='flex justify-center items-center'><CgProfile></CgProfile>Publisher : {publisher}</p>
-                    <p className='flex justify-center items-center'><RiPagesLine></RiPagesLine>TotalPages : {totalPages}</p>
+                <div className='md:flex gap-7 mt-5 space-y-2'>
+                    <p className='flex md:justify-center items-center'><CgProfile></CgProfile>Publisher : {publisher}</p>
+                    <p className='flex md:justify-center items-center'><RiPagesLine></RiPagesLine>TotalPages : {totalPages}</p>
                 </div>
                 <div className="divider"></div>
                 <div className='flex gap-3'>
