@@ -9,6 +9,7 @@ import Root from './components/Root/Root.jsx';
 import Home from './components/Home/Home.jsx';
 import ListBooks from './components/ListBooks/ListBooks.jsx';
 import PagesToRead from './components/PagesToRead/PagesToRead.jsx';
+import Books from './components/Books/Books.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,8 +26,8 @@ const router = createBrowserRouter([
       {
         path:"/pagesToRead",
         element:<PagesToRead></PagesToRead>
-      }
-
+      },
+       
 
     ]
   },
