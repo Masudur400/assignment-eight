@@ -12,6 +12,7 @@ import PagesToRead from './components/PagesToRead/PagesToRead.jsx';
 import Books from './components/Books/Books.jsx';
 import BookDetails from './components/BookDetails/BookDetails.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import ReadBooks from './components/ReadBooks/ReadBooks.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,8 @@ const router = createBrowserRouter([
       },
       {
         path:"/listBooks",
-        element:<ListBooks></ListBooks>
+        element:<ListBooks></ListBooks>,
+        loader:async ()=>await fetch('fakeData.json'),
       },
       {
         path:"/pagesToRead",
@@ -34,6 +36,11 @@ const router = createBrowserRouter([
         path:"/book/:id",
         element:<BookDetails></BookDetails>,
         loader:()=>fetch('fakeData.json'),
+       },
+       {
+        path:"/readBook",
+        element:<ReadBooks></ReadBooks>,
+        loader:async ()=>await fetch('fakeData.json'),
        }
 
     ]

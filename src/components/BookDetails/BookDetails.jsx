@@ -1,17 +1,20 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
+import { saveReadBooks } from "../../Utility/LocalStorage";
 
 
 const BookDetails = () => {
     const books = useLoaderData()
     const { id } = useParams()
     const idInt = parseInt(id)
+    
     const book = books.find(book => book.bookId === idInt)
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = book;
-    // console.log(book);
+    
     const handleRead = () =>{
+        saveReadBooks(idInt);
         toast('Add Successfull Read')
     }
 
@@ -54,11 +57,14 @@ const BookDetails = () => {
 
                 <div className="flex gap-10 mt-5">
 
+                <Link to="/listBooks">
                 <button onClick={handleRead}
                  className="btn bg-green-400 text-white font-bold">Read</button>
+                 </Link>
                 <button onClick={handleWishList}
                  className="btn bg-green-400 text-white font-bold">Wishlist</button>
                 </div>
+                
             </div>
             <ToastContainer></ToastContainer>
         </div>

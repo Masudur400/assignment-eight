@@ -1,10 +1,36 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import 'react-tabs/style/react-tabs.css';   
+import { getReadBook } from '../../Utility/LocalStorage';
 
 
 const ListBooks = () => {
+
+    
+    const books = useLoaderData();
+    const [bookSave,setBookSave] = useState([])
+    useEffect(() => {
+        const storedBookIds = getReadBook();
+        if(books.length > 0){
+            // const savedBook = books.filter(book => storedBookIds.includes(book.bookId));
+            // console.log(books,storedBookIds,savedBook);
+            // console.log(books)
+            const savedBook = []
+            for(const id of storedBookIds){
+                const book = books.find(book => book.bookId === id);
+                if(book){
+                    savedBook.push(book);
+                }
+            }
+            setBookSave(savedBook);
+            // console.log(books,storedBookIds,savedBook);
+        }
+    }, [])
+
+
+
     const [tabIndex, setTabIndex] = useState(0);
     return (
         <div>
@@ -16,7 +42,16 @@ const ListBooks = () => {
                     <Tab>Read Books</Tab>
                     <Tab>Wishlist Books</Tab>
                 </TabList>
-                <TabPanel></TabPanel>
+                <TabPanel>
+                    <div>
+                    <p>read books : {bookSave.length} </p> 
+                    {
+                        bookSave.map(book => <div key={book.bookId}>
+                            <p>{book.bookName}</p>
+                        </div>)
+                    }
+                    </div>
+                </TabPanel>
                 <TabPanel></TabPanel>
             </Tabs>
         </div>
