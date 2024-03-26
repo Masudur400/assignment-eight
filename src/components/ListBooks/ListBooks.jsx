@@ -41,20 +41,7 @@ const ListBooks = () => {
         }
     }, []);
 
-    // useEffect(()=>{
-    //     const storedWishList = getWishListBook();
-    //     if(books.length > 0) {
-    //         const savedWishList =[]
-    //         for(const id of storedWishList){
-    //             const wishList = books.find (book  => book.bookId === id);
-    //             if(wishList){
-    //                 savedWishList.push(wishList);
-    //             }
-                 
-    //         }
-    //         setWishList(savedWishList);
-    //     }
-    // },[])
+     
 
 
 
