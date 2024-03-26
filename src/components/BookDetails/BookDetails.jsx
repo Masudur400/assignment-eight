@@ -67,8 +67,10 @@ const BookDetails = () => {
                 <button onClick={handleRead}
                  className="btn bg-green-400 text-white font-bold">Read</button>
                  </Link>
+                <Link to="/listBooks">
                 <button onClick={handleWishList}
                  className="btn bg-green-400 text-white font-bold">Wishlist</button>
+                </Link>
                 </div>
                 
             </div>
