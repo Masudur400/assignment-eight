@@ -40,6 +40,7 @@ const ListBooks = () => {
                     <Tab>Wishlist Books</Tab>
                 </TabList>
                 <TabPanel>
+                    <h3 className="text-3xl">Read Books: {bookSave.length}</h3>
                     <div> 
                     {
                         bookSave.map((book,idx) =>  <ReadBooks key={idx} book={book}></ReadBooks>)

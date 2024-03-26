@@ -17,8 +17,8 @@ const ReadBooks = ({ book }) => {
             <div>
                 <p className='text-3xl font-bold mt-5'>{bookName}</p>
                 <p className='text-xl mt-5'>By : {author}</p>
-                <div className='md:flex gap-4 mt-5'>
-                    <div className='md:flex gap-3'>
+                <div className='lg:flex gap-4 mt-5'>
+                    <div className='lg:flex gap-3'>
                         <p className='font-bold'>Tags : </p>
                         {
                             tags.map((tag, idx) => <p className=' mb-2  px-2 py-1 rounded-full text-green-500 bg-green-50' key={idx}>{tag}</p>)
@@ -29,14 +29,14 @@ const ReadBooks = ({ book }) => {
                     </div>
 
                 </div>
-                <div className='md:flex gap-7 mt-5 space-y-2'>
-                    <p className='flex md:justify-center items-center'><CgProfile></CgProfile>Publisher : {publisher}</p>
-                    <p className='flex md:justify-center items-center'><RiPagesLine></RiPagesLine>TotalPages : {totalPages}</p>
+                <div className='lg:flex gap-7 mt-5 space-y-2'>
+                    <p className='flex gap-2 md:justify-center items-center'><CgProfile></CgProfile>Publisher : {publisher}</p>
+                    <p className='flex gap-2 md:justify-center items-center'><RiPagesLine></RiPagesLine>TotalPages : {totalPages}</p>
                 </div>
                 <div className="divider"></div>
-                <div className='flex gap-3'>
-                    <p className="bg-blue-50 text-blue-500 px-3 py-2 rounded-full">category : {category}</p>
-                    <p className="bg-orange-50 text-orange-500 px-3 py-2 rounded-full">rating : {rating}</p> 
+                <div className='lg:flex grid space-y-2 gap-3'>
+                    <button className="bg-blue-50 text-blue-500 px-3 py-2 rounded-full">category : {category}</button>
+                    <button className="bg-orange-50 text-orange-500 px-3 py-2 rounded-full">rating : {rating}</button> 
                     <Link to={`/book/${bookId}`} className='bg-green-500 px-3 py-2 rounded-full text-white font-bold text-center'> <button>View Details</button></Link>
                 </div>
             </div>
