@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
  
 const Header = () => {
     return (
-        <div className=" md:flex bg-gray-100 rounded-xl mt-10 px-2 py-5 lg:px-14 lg:py-10">
+        <div className=" md:flex bg-gray-100 rounded-xl mt-10 px-2 py-5 md:px-14 lg:px-32 lg:py-10">
             <div className="lg:w-1/2 md:hidden flex justify-end">
                 <img src="/src/assets/images/pngwing 1.png" alt="" />
             </div>

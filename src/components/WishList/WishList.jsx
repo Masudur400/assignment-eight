@@ -9,7 +9,7 @@ const WishList = ({ list }) => {
     const { bookId, bookName, author, image, totalPages, rating, category, tags, publisher, year_of_publishing } = list;
     return (
         <div className="mb-5 md:flex border p-6 rounded-xl gap-10">
-            <div className='bg-gray-100 p-6 rounded-lg'>
+            <div className='bg-gray-100 p-6 rounded-lg flex justify-center items-center'>
                 <img className='md:w-60' src={image} alt="" />
             </div>
 
