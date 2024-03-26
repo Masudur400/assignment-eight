@@ -21,7 +21,7 @@ const BookDetails = () => {
     
     const handleRead = () =>{
         saveReadBooks(idInt);
-        toast('Add Successfull Read')
+         toast('Add Successfull Read') 
     }
 
     const handleWishList = () =>{
@@ -63,11 +63,11 @@ const BookDetails = () => {
 
                 <div className="flex gap-10 mt-5">
 
-                <Link to="/listBooks">
+                <Link >
                 <button onClick={handleRead}
                  className="btn bg-green-400 text-white font-bold">Read</button>
                  </Link>
-                <Link to="/listBooks">
+                <Link >
                 <button onClick={handleWishList}
                  className="btn bg-green-400 text-white font-bold">Wishlist</button>
                 </Link>

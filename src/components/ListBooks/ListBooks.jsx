@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+import { FaChevronDown } from "react-icons/fa";
 import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -14,13 +15,29 @@ const ListBooks = () => {
     const books = useLoaderData();
     const [bookSave, setBookSave] = useState([])
     const [wishList, setWishList] = useState([])
+    const [displayBooks,setDisplayBooks] = useState([])
+
+    const handleBooksFilter = filter =>{
+        if(filter === 'All'){
+            setDisplayBooks(bookSave)
+        }
+        else if(filter === 'Classic'){
+            const  listBook = bookSave.filter(book => book.category=== 'classic')
+            setDisplayBooks(listBook)
+        }
+        else if(filter === 'Fiction'){
+            const  listBook2 = bookSave.filter(book => book.category=== 'Fiction')
+            setDisplayBooks(listBook2)
+        }
+         
+    }
 
     useEffect(() => {
         const storedBookIds = getReadBook();
         const storedWishList = getWishListBook();
         if (books.length > 0) {
             const savedBook = []
-            const savedWishList =[]
+            const savedWishList = []
             for (const id of storedBookIds) {
                 const book = books?.find(book => book.bookId === id);
                 if (book) {
@@ -28,28 +45,41 @@ const ListBooks = () => {
                 }
             }
             setBookSave(savedBook);
+            setDisplayBooks(savedBook)
 
-            for(const id of storedWishList){
-                const wishList = books?.find (book  => book.bookId === id);
-                if(wishList){
+            for (const id of storedWishList) {
+                const wishList = books?.find(book => book.bookId === id);
+                if (wishList) {
                     savedWishList.push(wishList);
                 }
-                 
+
             }
             setWishList(savedWishList);
-           
+            // setDisplayBooks(savedWishList)
         }
-    }, []);
+    }, [books]);
 
-     
+
 
 
 
     const [tabIndex, setTabIndex] = useState(0);
     return (
         <div>
-            <div className='flex justify-center my-10 items-center bg-gray-100 rounded-xl md:py-20 py-10 '>
+            <div className='flex justify-center my-10 items-center bg-gray-100 rounded-xl md:py-14 py-10 '>
                 <h3 className="text-4xl font-bold">  Books</h3>
+            </div>
+
+            <div className='my-10 flex justify-center'>
+                <details className="dropdown  ">
+                    <summary className="m-1 btn flex items-center gap-3 bg-green-400 text-white">Sort By <FaChevronDown></FaChevronDown></summary>
+                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                        <li onClick={()=>handleBooksFilter('All')}><a>All</a></li>
+                        <li onClick={()=>handleBooksFilter('Classic')}><a>Classic</a></li>
+                        <li onClick={()=>handleBooksFilter('Fiction')}><a>Fiction  </a></li>
+                        
+                    </ul>
+                </details>
             </div>
 
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
@@ -59,20 +89,20 @@ const ListBooks = () => {
                 </TabList>
                 {/* tabpanel 1  */}
                 <TabPanel>
-                    <h3 className="text-3xl">Read Books: {bookSave.length}</h3>
+                     
                     <div>
                         {
-                            bookSave.map((book, idx) => <ReadBooks key={idx} book={book}></ReadBooks>)
+                            displayBooks.map((book, idx) => <ReadBooks key={idx} book={book}></ReadBooks>)
                         }
                     </div>
                 </TabPanel>
 
                 {/* tabpanel 2  */}
                 <TabPanel>
-                    <h2 className="text-3xl">WishList Read : {wishList.length}</h2>
+                     
                     <div>
                         {
-                            wishList.map(((list,idx) => <WishList key={idx} list={list}></WishList>))
+                            wishList.map(((list, idx) => <WishList key={idx} list={list}></WishList>))
                         }
                     </div>
                 </TabPanel>
