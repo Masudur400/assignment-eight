@@ -1,5 +1,5 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 import {   saveReadBooks, saveWishListBooks } from "../../Utility/LocalStorage";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 const BookDetails = () => { 
     const [bookDetails,setBookDetails]=useState([]);
+    const [disable,setDisable] = useState(false);
     const books = useLoaderData()
     const { id } = useParams()
     const idInt = parseInt(id)
@@ -21,12 +22,19 @@ const BookDetails = () => {
     
     const handleRead = () =>{
         saveReadBooks(idInt);
-         toast('Add Successfull Read') 
+        setDisable(!disable)
+        
+        
     }
 
     const handleWishList = () =>{
-        saveWishListBooks(idInt);
-        toast('Add Successfull WishList')
+        if(disable){
+            return
+        }
+        else{
+            saveWishListBooks(idInt);
+
+        }
     }
 
 
@@ -69,7 +77,7 @@ const BookDetails = () => {
                  </Link>
                 <Link >
                 <button onClick={handleWishList}
-                 className="btn bg-green-400 text-white font-bold">Wishlist</button>
+                 className={`${disable?'disabled bg-green-300 btn text-white font-bold': 'btn bg-green-400  text-white font-bold'}`}>Wishlist</button>
                 </Link>
                 </div>
                 

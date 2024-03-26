@@ -35,10 +35,7 @@ const ListBooks = () => {
             const wish2  = wishList.filter(book => book.category=== 'Fiction')
             setDisplayBooks(listBook2)
             setDisplayBooks2(wish2)
-        }
-
-
-         
+        } 
          
     }
 

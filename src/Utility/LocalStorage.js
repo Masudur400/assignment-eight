@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 
 const getReadBook = ()=>{
     const storedReadBook = localStorage.getItem('read-book');
@@ -10,9 +11,13 @@ const getReadBook = ()=>{
 const saveReadBooks = id =>{
     const storedBooks = getReadBook();
     const exist = storedBooks?.find(bookId =>   id === bookId);
-    if(!exist){
+
+    if(!exist){ 
         storedBooks.push(id);
         localStorage.setItem('read-book',JSON.stringify(storedBooks))
+        toast('Add Successful Read') 
+    } else{
+        toast('already add')
     }
 
 }
@@ -31,6 +36,10 @@ const saveWishListBooks = id =>{
     if(!exist){
         storedBooks.push(id);
         localStorage.setItem('wishList-book',JSON.stringify(storedBooks))
+        toast('Add Successful WishList')
+    }
+    else{
+        toast('already add')
     }
 
 }
