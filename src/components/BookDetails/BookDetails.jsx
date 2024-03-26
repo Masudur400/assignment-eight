@@ -1,7 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
-import { saveReadBooks } from "../../Utility/LocalStorage";
+import {   saveReadBooks, saveWishListBooks } from "../../Utility/LocalStorage";
 
 
 const BookDetails = () => {
@@ -9,8 +9,10 @@ const BookDetails = () => {
     const { id } = useParams()
     const idInt = parseInt(id)
     
-    const book = books.find(book => book.bookId === idInt)
+    const book = books?.find(book => book.bookId === idInt)
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = book;
+
+    console.log(books)
     
     const handleRead = () =>{
         saveReadBooks(idInt);
@@ -18,6 +20,7 @@ const BookDetails = () => {
     }
 
     const handleWishList = () =>{
+        saveWishListBooks(idInt);
         toast('Add Successfull WishList')
     }
 
