@@ -1,7 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import PropTypes from 'prop-types';
+import 'react-toastify/dist/ReactToastify.css'; 
 import { saveReadBooks } from "../../Utility/LocalStorage";
 
 
@@ -71,7 +70,7 @@ const BookDetails = () => {
 };
 
 BookDetails.propTypes={
-    tag: PropTypes.string
+    
 }
 
 export default BookDetails;
