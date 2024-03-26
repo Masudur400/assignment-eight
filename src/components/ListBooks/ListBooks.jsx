@@ -17,33 +17,44 @@ const ListBooks = () => {
 
     useEffect(() => {
         const storedBookIds = getReadBook();
+        const storedWishList = getWishListBook();
         if (books.length > 0) {
             const savedBook = []
+            const savedWishList =[]
             for (const id of storedBookIds) {
-                const book = books.find(book => book.bookId === id);
+                const book = books?.find(book => book.bookId === id);
                 if (book) {
                     savedBook.push(book);
                 }
             }
             setBookSave(savedBook);
-           
-        }
-    }, []);
 
-    useEffect(()=>{
-        const storedWishList = getWishListBook();
-        if(books.length > 0) {
-            const savedWishList =[]
             for(const id of storedWishList){
-                const wishList = books.find (book  => book.bookId === id);
+                const wishList = books?.find (book  => book.bookId === id);
                 if(wishList){
                     savedWishList.push(wishList);
                 }
                  
             }
             setWishList(savedWishList);
+           
         }
-    },[])
+    }, []);
+
+    // useEffect(()=>{
+    //     const storedWishList = getWishListBook();
+    //     if(books.length > 0) {
+    //         const savedWishList =[]
+    //         for(const id of storedWishList){
+    //             const wishList = books.find (book  => book.bookId === id);
+    //             if(wishList){
+    //                 savedWishList.push(wishList);
+    //             }
+                 
+    //         }
+    //         setWishList(savedWishList);
+    //     }
+    // },[])
 
 
 

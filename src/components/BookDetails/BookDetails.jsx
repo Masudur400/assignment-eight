@@ -2,17 +2,22 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 import {   saveReadBooks, saveWishListBooks } from "../../Utility/LocalStorage";
+import { useEffect, useState } from "react";
 
 
-const BookDetails = () => {
+const BookDetails = () => { 
+    const [bookDetails,setBookDetails]=useState([]);
     const books = useLoaderData()
     const { id } = useParams()
     const idInt = parseInt(id)
     
-    const book = books?.find(book => book.bookId === idInt)
-    const { bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = book;
+    useEffect(()=>{
+        const book = books?.find(book => book.bookId === idInt)
+        setBookDetails(book)
+    },[books,idInt])
+    const { bookName, author, image, review, totalPages, rating, category, tags, publisher, year_of_publishing } = bookDetails;
 
-    console.log(books)
+    // console.log(books)
     
     const handleRead = () =>{
         saveReadBooks(idInt);
@@ -43,7 +48,7 @@ const BookDetails = () => {
                 <div className="md:flex justify-between mt-5">
                     <p className="font-bold">Tags : </p>
                     {
-                        tags.map((tag,i) => <p className="bg-green-50 mb-2 px-3 py-2 rounded-full text-green-500 font-bold" 
+                        tags?.map((tag,i) => <p className="bg-green-50 mb-2 px-3 py-2 rounded-full text-green-500 font-bold" 
                         key={i}  
                         >{tag}</p>)
                     }

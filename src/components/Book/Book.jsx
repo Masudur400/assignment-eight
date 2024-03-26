@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types';
 import { FaRegStar } from "react-icons/fa";
-import { Link, useNavigate  } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 
 const Book = ({book}) => {
     const {bookId,author, bookName,category, rating ,image } =  book;
-
-   //  const navigate = useNavigate();
-
-   //  const handleDetails = () =>{
-   //      navigate(`/book/${bookId}`)
-   //  }
+ 
 
 
     return (

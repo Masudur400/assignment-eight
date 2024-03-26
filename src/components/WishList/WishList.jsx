@@ -20,7 +20,7 @@ const WishList = ({ list }) => {
                     <div className='lg:flex gap-3'>
                         <p className='font-bold'>Tags : </p>
                         {
-                            tags.map((tag, idx) => <p className=' mb-2  px-2 py-1 rounded-full text-green-500 bg-green-50' key={idx}>{tag}</p>)
+                            tags?.map((tag, idx) => <p className=' mb-2  px-2 py-1 rounded-full text-green-500 bg-green-50' key={idx}>{tag}</p>)
                         }
                     </div>
                     <div>
