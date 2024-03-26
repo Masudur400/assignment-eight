@@ -16,19 +16,29 @@ const ListBooks = () => {
     const [bookSave, setBookSave] = useState([])
     const [wishList, setWishList] = useState([])
     const [displayBooks,setDisplayBooks] = useState([])
+    const [displayBooks2,setDisplayBooks2] = useState([])
 
-    const handleBooksFilter = filter =>{
-        if(filter === 'All'){
+    const handleBooksFilter = (bookL,wish) =>{
+        if(bookL === 'All' || wish === 'All'){
             setDisplayBooks(bookSave)
+            setDisplayBooks2(wishList)
         }
-        else if(filter === 'Classic'){
+        else if(bookL === 'Classic' || wish === 'Classic'){
             const  listBook = bookSave.filter(book => book.category=== 'classic')
+            const wish  = wishList.filter(book => book.category=== 'classic')
             setDisplayBooks(listBook)
+            setDisplayBooks2(wish)
+
         }
-        else if(filter === 'Fiction'){
+        else if(bookL === 'Fiction' || wish === 'Fiction'){
             const  listBook2 = bookSave.filter(book => book.category=== 'Fiction')
+            const wish2  = wishList.filter(book => book.category=== 'Fiction')
             setDisplayBooks(listBook2)
+            setDisplayBooks2(wish2)
         }
+
+
+         
          
     }
 
@@ -55,7 +65,7 @@ const ListBooks = () => {
 
             }
             setWishList(savedWishList);
-            // setDisplayBooks(savedWishList)
+            setDisplayBooks2(savedWishList)
         }
     }, [books]);
 
@@ -102,7 +112,7 @@ const ListBooks = () => {
                      
                     <div>
                         {
-                            wishList.map(((list, idx) => <WishList key={idx} list={list}></WishList>))
+                            displayBooks2.map(((list, idx) => <WishList key={idx} list={list}></WishList>))
                         }
                     </div>
                 </TabPanel>
