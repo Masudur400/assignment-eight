@@ -4,6 +4,10 @@ import useReadedBook from "../../Hooks/useReadedBook";
  
 const PagesToRead = () => {
     const readBookChart = useReadedBook(); 
+
+    for(const chart of readBookChart){
+        console.log(chart)
+    }
      
 
     console.log(readBookChart)

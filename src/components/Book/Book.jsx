@@ -12,7 +12,7 @@ const Book = ({book}) => {
          <Link to={`/book/${bookId}`}>
          <div className="border rounded-md  p-5 ">
              <div className='flex items-center md:p-9 p-5 justify-center bg-gray-100 rounded-md'>
-                <img className='h-1/2 w-1/2' src={image} alt="" />
+                <img className='h-[300px] w-[500px]' src={image} alt="" />
              </div>
 
              <div className='flex justify-between mt-5'>
