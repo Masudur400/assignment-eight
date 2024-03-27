@@ -76,7 +76,7 @@ const TriangleBar = (props) => {
             <div className="hidden lg:block">
             <h3 className="text-4xl my-10 text-center">Read Books</h3>
             <BarChart
-      width={1200} 
+      width={1000} 
       height={500}
       data={readBookChart}
       margin={{
