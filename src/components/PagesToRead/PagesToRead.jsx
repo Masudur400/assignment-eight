@@ -5,7 +5,6 @@ import useReadedBook from "../../Hooks/useReadedBook";
 const PagesToRead = () => { 
 
     const readBookChart = useReadedBook(); 
-  // console.log(readBookChart)
 
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
     
@@ -71,9 +70,9 @@ const TriangleBar = (props) => {
 
     return (
         <div>
-            <h3 className="text-4xl">Pages to read</h3>
+            <h3 className="text-4xl my-10 text-center">Read Books</h3>
             <BarChart
-      width={500}
+      width={500} 
       height={300}
       data={readBookChart}
       margin={{
@@ -91,10 +90,7 @@ const TriangleBar = (props) => {
           <Cell key={`cell-${index}`} fill={colors[index % 20]} />
         ))}
       </Bar>
-    </BarChart>
-
-
-
+    </BarChart> 
 
         </div>
     );
