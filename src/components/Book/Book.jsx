@@ -3,7 +3,7 @@ import { FaRegStar } from "react-icons/fa";
 import { Link  } from 'react-router-dom';
 
 const Book = ({book}) => {
-    const {bookId,author, bookName,category, rating ,image } =  book;
+    const {bookId,author, bookName,category,tags, rating ,image } =  book;
  
 
 
@@ -15,9 +15,12 @@ const Book = ({book}) => {
                 <img className='h-[300px] w-[500px]' src={image} alt="" />
              </div>
 
-             <div className='flex justify-between mt-5'>
-                <button className='bg-gray-100 text-green-500 text-bold px-4 py-2 rounded-full'>Young Adult</button>
-                <button className='bg-gray-100 text-green-500 text-bold px-4 py-2 rounded-full'>Identity</button>
+             <div className='md:flex justify-between mt-5'>
+               {
+                  tags.map((tag,idx) => <p className='bg-gray-100 mb-2 text-sm text-center text-green-500 text-bold  px-2 rounded-full' key={idx}>{tag}</p>)
+               }
+                {/* <button className='bg-gray-100 text-green-500 text-bold px-4 py-2 rounded-full'>Young Adult</button>
+                <button className='bg-gray-100 text-green-500 text-bold px-4 py-2 rounded-full'>Identity</button> */}
              </div>
              <p className='text-2xl font-bold mt-3'>{bookName}</p>
              <p className='text-xl   mt-3'>By : {author}</p>

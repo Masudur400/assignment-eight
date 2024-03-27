@@ -8,7 +8,7 @@
       "totalPages": 281,
       "rating": 4.5,
       "category": "classic",
-      "tags": ["classic", "social issues", "courtroom drama"],
+      "tags": ["#classic", "#social issues", "#courtroom drama"],
       "publisher": "J. B. Lippincott & Co.",
       "year_of_publishing": 1960
     },
@@ -21,7 +21,7 @@
       "totalPages": 328,
       "rating": 4.8,
       "category": "Fiction",
-      "tags": ["dystopian", "totalitarianism", "surveillance"],
+      "tags": ["#dystopian", "#totalitarianism", "#surveillance"],
       "publisher": "Secker & Warburg",
       "year_of_publishing": 1949
     },
@@ -34,7 +34,7 @@
       "totalPages": 180,
       "rating": 4.6,
       "category": "Fiction",
-      "tags": ["Jazz Age", "American Dream", "romance"],
+      "tags": ["#Jazz Age", "#American Dream", "#romance"],
       "publisher": "Charles Scribner's Sons",
       "year_of_publishing": 1925
     },
@@ -47,7 +47,7 @@
       "totalPages": 320,
       "rating": 4.9,
       "category": "classic",
-      "tags": ["magic", "wizardry", "adventure"],
+      "tags": ["#magic", "#wizardry", "#adventure"],
       "publisher": "Bloomsbury Publishing",
       "year_of_publishing": 1997
     },
@@ -60,7 +60,7 @@
       "totalPages": 224,
       "rating": 4.4,
       "category": "Fiction",
-      "tags": ["coming-of-age", "alienation", "identity"],
+      "tags": ["#coming-of-age", "#alienation", "#identity"],
       "publisher": "Little, Brown and Company",
       "year_of_publishing": 1951
     },
@@ -73,7 +73,7 @@
       "totalPages": 432,
       "rating": 4.7,
       "category": "classic",
-      "tags": ["romance", "social commentary", "regency era"],
+      "tags": ["#romance", "#social commentary", "#regency era"],
       "publisher": "T. Egerton, Whitehall",
       "year_of_publishing": 1813
     },
@@ -86,7 +86,7 @@
       "totalPages": 310,
       "rating": 4.8,
       "category": "Fiction",
-      "tags": ["adventure", "Middle-earth", "epic fantasy"],
+      "tags": ["#adventure", "#Middle-earth", "#epic fantasy"],
       "publisher": "George Allen & Unwin",
       "year_of_publishing": 1937
     },
@@ -99,7 +99,7 @@
       "totalPages": 544,
       "rating": 4.6,
       "category": "classic",
-      "tags": ["adventure", "whaling", "obsession"],
+      "tags": ["#adventure", "#whaling", "#obsession"],
       "publisher": "Richard Bentley (UK), Harper & Brothers (US)",
       "year_of_publishing": 1851
     },
@@ -112,7 +112,7 @@
       "totalPages": 1178,
       "rating": 4.9,
       "category": "Fiction",
-      "tags": ["epic fantasy", "Middle-earth", "adventure"],
+      "tags": ["#epic fantasy", "#Middle-earth", "#adventure"],
       "publisher": "Allen & Unwin (UK), Houghton Mifflin (US)",
       "year_of_publishing": 1954
     },
@@ -125,7 +125,7 @@
       "totalPages": 254,
       "rating": 4.7,
       "category": "classic",
-      "tags": ["philosophical", "morality", "vanity"],
+      "tags": ["#philosophical", "#morality", "#vanity"],
       "publisher": "Ward, Lock & Co.",
       "year_of_publishing": 1890
     },
