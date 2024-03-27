@@ -1,16 +1,11 @@
-import { Bar, BarChart, CartesianGrid, Cell, XAxis, YAxis } from "recharts"; 
-import useReadedBook from "../../Hooks/useReadedBook";
+import { Bar, BarChart, CartesianGrid, Cell, XAxis, YAxis } from "recharts";  
+import useReadedBook from "../../Hooks/useReadedBook";  
 
  
-const PagesToRead = () => {
+const PagesToRead = () => { 
+
     const readBookChart = useReadedBook(); 
-
-    for(const chart of readBookChart){
-        console.log(chart)
-    }
-     
-
-    console.log(readBookChart)
+  // console.log(readBookChart)
 
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
     
@@ -80,7 +75,7 @@ const TriangleBar = (props) => {
             <BarChart
       width={500}
       height={300}
-      data={data}
+      data={readBookChart}
       margin={{
         top: 20,
         right: 30,
@@ -89,14 +84,18 @@ const TriangleBar = (props) => {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
+      <XAxis dataKey="bookName" />
       <YAxis />
-      <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+      <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={colors[index % 20]} />
         ))}
       </Bar>
     </BarChart>
+
+
+
+
         </div>
     );
 };
