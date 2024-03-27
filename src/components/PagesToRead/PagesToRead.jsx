@@ -6,7 +6,7 @@ const PagesToRead = () => {
 
     const readBookChart = useReadedBook(); 
 
-    const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+    const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red'];
     
 
 const data = [
@@ -61,6 +61,9 @@ const getPath = (x, y, width, height) => {
   Z`;
 };
 
+
+ 
+
 const TriangleBar = (props) => {
   const { fill, x, y, width, height } = props;
 
@@ -69,11 +72,12 @@ const TriangleBar = (props) => {
      
 
     return (
-        <div>
+        <div className="">
+            <div className="hidden lg:block">
             <h3 className="text-4xl my-10 text-center">Read Books</h3>
             <BarChart
-      width={500} 
-      height={300}
+      width={1000} 
+      height={500}
       data={readBookChart}
       margin={{
         top: 20,
@@ -81,6 +85,7 @@ const TriangleBar = (props) => {
         // left: 20,
         bottom: 5,
       }}
+      
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis className="text-[7px]" dataKey="bookName" />
@@ -91,6 +96,32 @@ const TriangleBar = (props) => {
         ))}
       </Bar>
     </BarChart> 
+            </div>
+
+            <div className="lg:hidden">
+            <h3 className="text-4xl my-10 text-center">Read Books</h3>
+            <BarChart
+      width={300} 
+      height={400}
+      data={readBookChart}
+      margin={{
+        top: 20,
+        // right: 30,
+        // left: 20,
+        bottom: 5,
+      }}
+      
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis className="text-[7px]" dataKey="bookName" />
+      <YAxis />
+      <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+        ))}
+      </Bar>
+    </BarChart> 
+            </div>
 
         </div>
     );
