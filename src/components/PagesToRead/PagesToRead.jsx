@@ -77,13 +77,13 @@ const TriangleBar = (props) => {
       data={readBookChart}
       margin={{
         top: 20,
-        right: 30,
-        left: 20,
+        // right: 30,
+        // left: 20,
         bottom: 5,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="bookName" />
+      <XAxis className="text-[7px]" dataKey="bookName" />
       <YAxis />
       <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
         {data.map((entry, index) => (
