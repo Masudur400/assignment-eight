@@ -1,5 +1,5 @@
 import { Bar, BarChart, CartesianGrid, Cell, XAxis, YAxis } from "recharts";  
-import useReadedBook from "../../Hooks/useReadedBook";  
+import useReadedBook from "../../Hooks/useReadedBook"; 
 
  
 const PagesToRead = () => { 
@@ -95,5 +95,6 @@ const TriangleBar = (props) => {
         </div>
     );
 };
+ 
 
 export default PagesToRead;
