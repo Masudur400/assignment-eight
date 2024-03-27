@@ -19,8 +19,7 @@ const Book = ({book}) => {
                {
                   tags.map((tag,idx) => <p className='bg-gray-100 mb-2 text-sm text-center text-green-500 text-bold  px-2 rounded-full' key={idx}>{tag}</p>)
                }
-                {/* <button className='bg-gray-100 text-green-500 text-bold px-4 py-2 rounded-full'>Young Adult</button>
-                <button className='bg-gray-100 text-green-500 text-bold px-4 py-2 rounded-full'>Identity</button> */}
+                 
              </div>
              <p className='text-2xl font-bold mt-3'>{bookName}</p>
              <p className='text-xl   mt-3'>By : {author}</p>
