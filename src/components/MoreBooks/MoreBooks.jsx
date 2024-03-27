@@ -1,9 +1,12 @@
+import Books from "../Books/Books";
+
+ 
  
 const MoreBooks = () => {
     return (
         <div>
-            
-        </div>
+            <Books></Books>
+         </div>
     );
 };
 

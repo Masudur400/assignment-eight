@@ -19,11 +19,13 @@ const Book = ({book}) => {
                {
                   tags.map((tag,idx) => <p className='bg-gray-100 mb-2 text-sm text-center text-green-500 text-bold  px-2 rounded-full' key={idx}>{tag}</p>)
                }
-                 
+                
              </div>
-             <p className='text-2xl font-bold mt-3'>{bookName}</p>
+            <div>
+            <p className='text-2xl font-bold mt-3'>{bookName}</p>
              <p className='text-xl   mt-3'>By : {author}</p>
              <div className="divider"></div>
+            </div>
              <div className='flex justify-between'>
                 <p>{category}</p>
                 <p className='flex gap-2 justify-center items-center'>{rating}<FaRegStar></FaRegStar></p>
