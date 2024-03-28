@@ -1,13 +1,9 @@
-# React + Vite
+ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Welcome to our Website
 
 
+# Benefits of using our website
 
 
 - Home is the first thing you see on our website. Where all types of books on our website are shown.
@@ -28,4 +24,4 @@ Currently, two official plugins are available:
 - There is one more content on the website. In which you can have an idea about which books will come or may come in the future. And that content is Upcoming Books.
 
 
-- live server : [https://assignment-eight55.netlify.app]
+ 
