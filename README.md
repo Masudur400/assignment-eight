@@ -25,4 +25,7 @@ Currently, two official plugins are available:
 - Our website has another content called More Book. If you click on it, you will see all other books. And you can also save them in read book or wish list.
 
 
+- There is one more content on the website. In which you can have an idea about which books will come or may come in the future. And that content is Upcoming Books.
 
+
+- live server : [https://assignment-eight55.netlify.app]
